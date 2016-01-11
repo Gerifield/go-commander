@@ -13,6 +13,8 @@ Commands:
 - ps aux
 ```
 
+Just copy the default_config.yaml to config.yaml and update with values.
+
 ## Depencie install
 
 ```
