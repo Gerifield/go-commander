@@ -1,0 +1,6 @@
+Server: <server>
+User: <user>
+Key: /.ssh/id_rsa
+Commands: 
+- <command1>
+- <command2>
