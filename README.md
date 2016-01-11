@@ -13,3 +13,9 @@ Commands:
 - ps aux
 ```
 
+## Depencie install
+
+```
+go get gopkg.in/hypersleep/easyssh.v0
+go get gopkg.in/yaml.v2
+```
