@@ -9,7 +9,7 @@ import (
 )
 
 type Config struct {
-	Server   string   `yaml:"Server"`
+	Servers  []string `yaml:"Servers"`
 	User     string   `yaml:"User"`
 	Port     string   `yaml:"Port"`
 	Key      string   `yaml:"Key"`
@@ -32,18 +32,20 @@ func main() {
 		log.Println("Config error:", err)
 	}
 
-	ssh := &easyssh.MakeConfig{
-		User:   config.User,
-		Server: config.Server,
-		Key:    config.Key,
-		Port:   config.Port,
-	}
-
-	for _, cmd := range config.Commands {
-		resp, err := ssh.Run(cmd)
-		if err != nil {
-			log.Println("Command error", cmd, err)
+	for _, server := range config.Servers {
+		ssh := &easyssh.MakeConfig{
+			User:   config.User,
+			Server: server,
+			Key:    config.Key,
+			Port:   config.Port,
 		}
-		log.Println(resp)
+
+		for _, cmd := range config.Commands {
+			resp, err := ssh.Run(cmd)
+			if err != nil {
+				log.Println("Command error", cmd, err)
+			}
+			log.Println(resp)
+		}
 	}
 }
