@@ -6,7 +6,7 @@ You can configure it with simple yaml file to run multiple commands on a server.
 Config example:
 
 ```
-Server: 192.168.0.1
+Servers: [192.168.0.1]
 User: root
 Key: /.ssh/id_rsa
 Commands: 
