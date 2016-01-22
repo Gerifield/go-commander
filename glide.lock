@@ -1,0 +1,10 @@
+hash: 6bd886a82eedfb72592953f7cfc196d80342c5fd80853b59b09c02599205a766
+updated: 2016-01-22T16:17:21.418862112+01:00
+imports:
+- name: golang.org/x/crypto
+  version: 3760e016850398b85094c4c99e955b8c3dea5711
+- name: gopkg.in/hypersleep/easyssh.v0
+  version: 1542e726150822ceaa64a8180298d0e5407c6989
+- name: gopkg.in/yaml.v2
+  version: f7716cbe52baa25d2e9b0d0da546fcf909fc16b4
+devImports: []

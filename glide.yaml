@@ -1,0 +1,4 @@
+package: github.com/Gerifield/go-commander
+import:
+- package: gopkg.in/hypersleep/easyssh.v0
+- package: gopkg.in/yaml.v2

@@ -21,3 +21,9 @@ Just copy the default_config.yaml to config.yaml and update with values.
 go get gopkg.in/hypersleep/easyssh.v0
 go get gopkg.in/yaml.v2
 ```
+
+Or simple with glide:
+
+```
+glide install
+```
