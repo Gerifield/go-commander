@@ -1,7 +1,7 @@
 # Go commander
 
 This is a very small and easy ssh command runner.
-You can configure it with simple yaml file to run multiple commands on a server.
+You can configure it with simple yaml files to run multiple commands on multiple servers.
 
 Config example:
 
@@ -13,7 +13,8 @@ Commands:
 - ps aux
 ```
 
-Just copy the default_config.yaml to config.yaml and update with values.
+Just put the config files into the `configs` folder. The commands would be executed in alphabetical order.
+If you want, you can add subfolders too.
 
 ## Depencie install
 

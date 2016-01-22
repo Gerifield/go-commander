@@ -3,6 +3,8 @@ package main
 import (
 	"io/ioutil"
 	"log"
+	"os"
+	"path/filepath"
 
 	"gopkg.in/hypersleep/easyssh.v0"
 	"gopkg.in/yaml.v2"
@@ -17,17 +19,31 @@ type Config struct {
 }
 
 func main() {
-	data, err := ioutil.ReadFile("config.yaml")
+	err := filepath.Walk("./configs", readConfing)
 	if err != nil {
-		log.Println("Read error:", err)
+		log.Println(err)
 	}
+}
 
+func readConfing(path string, info os.FileInfo, err error) error {
+	if info != nil && !info.IsDir() {
+		log.Println("Run command:", path)
+		conf, err := ioutil.ReadFile(path)
+		if err != nil {
+			log.Println("Read error:", err)
+		}
+		parseAndRun(conf)
+	}
+	return nil
+}
+
+func parseAndRun(conf []byte) {
 	//Init with default values
 	config := Config{
 		Port: "22",
 	}
 
-	err = yaml.Unmarshal(data, &config)
+	err := yaml.Unmarshal(conf, &config)
 	if err != nil {
 		log.Println("Config error:", err)
 	}

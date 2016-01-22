@@ -1,6 +1,0 @@
-Servers: [<server1>, <server2>]
-User: <user>
-Key: /.ssh/id_rsa
-Commands: 
-- <command1>
-- <command2>
